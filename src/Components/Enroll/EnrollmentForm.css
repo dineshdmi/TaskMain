@@ -1,0 +1,45 @@
+/* EnrollmentForm.css */
+.enrollment-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.enrollment-form {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.enrollment-form h2 {
+    text-align: center;
+}
+
+.enrollment-form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.enrollment-form input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.enrollment-form button {
+    background-color: #4285f4;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.enrollment-form button:hover {
+    background-color: #3367d6;
+}

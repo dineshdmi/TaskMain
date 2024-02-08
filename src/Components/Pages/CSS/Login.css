@@ -2,7 +2,8 @@
     width: 100%;
     min-height: 100vh;
     background: #fce3fe;
-    padding-top: 1%;
+    padding-top: auto;
+
 }
 
 .loginsignup-container {
@@ -50,7 +51,7 @@
 
 .loginsignup-login {
     margin-top: 15px;
-    color: #5c5c5c;
+    color: #ca2e2e;
     font-size: 16px;
     font-weight: 500;
 }

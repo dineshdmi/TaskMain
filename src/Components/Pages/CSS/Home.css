@@ -1,62 +1,101 @@
+/* Home.css */
+/* Home.css */
 
-.container{
-    text-align: start;
-    justify-content: start;
-
-}
-.travel-home {
-    max-width: auto;
-    margin: 0 auto;
-    padding: 20px;
-    background: rgb(181, 206, 243);
-
-}
-
-.header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.header h1 {
-    font-size: 2rem;
-}
-
-.destinations {
+.col-sm-10 {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 100px;
 }
 
-.destination {
-    width: 30%;
-    padding: 20px;
+.card1 {
+    width: 800%;
+    max-width: 1500px;
+    height: 300px;
+    /* Adjust the maximum width as needed */
     border: 1px solid #ddd;
-    margin-bottom: 20px;
-    text-align: center;
-    transition: transform 0.3s ease-in-out;
-}
-
-.destination:hover {
-    transform: scale(1.05);
-}
-
-.destination img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
     border-radius: 8px;
-    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: #79b8e9;
 }
 
-.destination:hover img {
-    transform: scale(1.1);
+.card-body1 {
+    padding: 20px;
+    text-align: center;
 }
 
-.destination h2 {
+.card-title1 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.card-text1 {
+    margin-bottom: 15px;
+}
+
+.btn-primary1 {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary1:hover {
+    background-color: #1e87d6;
+}
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    margin-left: -45%;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.card:hover{
+    background-color: #e7f4fe;
+}
+.card {
+    width: 80%;
+    height: 150%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
-.destination p {
-    font-size: 1rem;
-    color: #555;
+.card-text {
+    margin-bottom: 15px;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1ed646;
 }

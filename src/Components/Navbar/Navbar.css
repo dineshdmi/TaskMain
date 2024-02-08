@@ -1,75 +1,91 @@
-/* Navbar.css */
-
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 15px;
-    background-color: #333;
-    /* Change the background color as needed */
+    background-color: #9bc4f2;
+    /* Update with your desired background color */
     color: white;
-    /* Change the text color as needed */
-        height: auto;
-        width: auto;
+    width: auto;
 }
 
 .nav-logo {
     display: flex;
     align-items: center;
-    height: auto;
-        width: auto;
+    cursor: pointer;
 }
 
 .nav-logo img {
-    width: 50px;
-    /* Adjust the logo size as needed */
-    height: auto;
+    width: 40px;
+    /* Adjust as needed */
+    height: 40px;
+    /* Adjust as needed */
     margin-right: 10px;
-
 }
 
 .nav-menu {
     list-style: none;
     display: flex;
-    margin: 0;
-    padding: 0;
-    height: auto;
-        width: auto;
 }
 
 .nav-menu li {
-    margin-right: 20px;
-    position: relative;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: white;
-    /* Change the text color as needed */
-    font-weight: bold;
-}
-
-.nav-menu hr {
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #ff9800;
-    /* Change the highlight color as needed */
-    border: none;
-    
+    margin-right: 80px;
 }
 
 .nav-login-cart button {
-    background-color: #3d5ed4;
-    /* Change the button color as needed */
-    color: #ebe2e2;
-    /* Change the button text color as needed */
-    border-radius: 10%;
-    padding: 10px 15px;
+    background-color: #3498db;
+    /* Update with your desired button color */
+    color: white;
+    padding: 8px 15px;
+    border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-weight: bold;
 }
 
-/* Add any additional styling as needed */
+.social-media {
+    display: flex;
+    margin-left: 40%;
+
+}
+
+.hamburger-menu {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    cursor: pointer;
+    margin-left: 80%;
+}
+
+.hamburger-menu button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    text-decoration: underline;
+    /* Add any other styles as needed */
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        /* Adjust based on your header height */
+        left: 0;
+        background-color: #222;
+        /* Update with your desired background color */
+        width: 100%;
+        padding: 15px;
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+}
