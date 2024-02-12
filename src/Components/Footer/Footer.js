@@ -1,71 +1,109 @@
-// Footer.js
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Footer.css'; // Import your CSS file
-import { SocialIcon } from 'react-social-icons'
+import React from "react";
+
+import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
+import { Link } from "react-router-dom";
+import "./Footer.css";
+
+const quickLinks = [
+  {
+    path: "/home",
+    display: "Home",
+  },
+
+  {
+    path: "/about",
+    display: "About",
+  },
+
+  {
+    path: "/contact",
+    display: "Contact",
+  },
+  {
+    path: "/product",
+    display: "Product",
+  },
+
+  {
+    path: "/login",
+    display: "Login",
+  },
+];
 
 const Footer = () => {
+  const date = new Date();
+  const year = date.getFullYear();
   return (
-    <div>
     <footer className="footer">
-      <div className="footer-section about">
-        <h2>About</h2>
-        <ul>
-            <li><Link to="/contact">Contact us</Link></li>
-          <li><Link to="/faq">FAQ</Link></li>
-          <li><Link to="/careers">Careers</Link></li>
-          <li><Link to="/investor-relations">Investor Relations</Link></li>
-        </ul>
-      </div>
-      <div className="footer-section policy">
-        <h2>Policy</h2>
-        <ul>
-          <li><Link to="/return-policy">Return Policy</Link></li>
-          <li><Link to="/privacy-policy">Privacy Policy</Link></li>
-          <li><Link to="/disclaimer">Disclaimer</Link></li>
-          <li><Link to="/terms-of-use">Terms of Use</Link></li>
-          <li><Link to="/buyers-policy">Buyers Policy</Link></li>
-          <li><Link to="/sellers-policy">Sellers Policy</Link></li>
-          <li><Link to="/anti-corruption-policy">Anti-corruption Policy</Link></li>
-        </ul>
-      </div>
-      <div className="footer-section useful-links">
-        <h2>Useful links</h2>
-        <ul>
-          <li><Link to="/articles">Articles</Link></li>
-          <li><Link to="/brands">Brands</Link></li>
-          <li><Link to="/catalogues">Catalogues</Link></li>
-          <li><Link to="/car-makers">Car Makers</Link></li>
-          <li><Link to="/sitemap">Sitemap</Link></li>
-          <li><Link to="/sitemap2">Sitemap2</Link></li>
-        </ul>
-      </div>
-    </footer>
+      <Container>
+        <Row>
+          <Col lg="4" md="4" sm="12">
+            <div className="logo footer__logo">
+              <h1>
+                <Link to="/home" className=" d-flex align-items-center gap-2">
+                  <i class="ri-car-line"></i>
+                  <span>
+                    BoodMo <br /> Service
+                  </span>
+                </Link>
+              </h1>
+            </div>
+            <p className="footer__logo-content">
+              India's biggest online marketplace <br/> for car spare parts
 
-      <div className="section social-media">
-        <div className="social-icons">
-          <SocialIcon
-            url="https://linkedin.com/in/couetilc"
-            className="social-icon"
-          />
-          <SocialIcon
-            url="https://instagram.com/in/couetilc"
-            className="social-icon"
-          />
-          <SocialIcon
-            url="https://facebook.com/in/couetilc"
-            className="social-icon"
-          />
-          <SocialIcon
-            url="https://twitter.com/in/couetilc"
-            className="social-icon"
-          />
-        </div>
-      </div>
-      <div className="footer-section copyright">
-        <p>© 2015-2024 Smart Parts Online Pvt. Ltd. (v6.2.8 build 240202.13)</p>
-      </div>
-    </div>
+            </p>
+          </Col>
+
+          <Col lg="2" md="4" sm="6">
+            <div className="mb-4">
+              <h5 className="footer__link-title">Quick Links</h5>
+              <ListGroup>
+                {quickLinks.map((item, index) => (
+                  <ListGroupItem key={index} className="p-0 mt-3 quick__link">
+                    <Link to={item.path}>{item.display}</Link>
+                  </ListGroupItem>
+                ))}
+              </ListGroup>
+            </div>
+          </Col>
+
+          <Col lg="3" md="4" sm="6">
+            <div className="mb-4">
+              <h5 className="footer__link-title mb-4">Head Office</h5>
+              <p className="office__info">Smart Parts Online Pvt. Ltd.
+                AIHP Palms (Plot No. 242 & 243), Ground floor, Udyog Vihar Phase IV, Gurugram, Haryana-122015, India.
+                </p>
+              <p className="office__info">Phone: +91 114 1189222</p>
+
+              <p className="office__info">Email: your.email@example.com</p>
+
+              <p className="office__info">Office Time: 10am - 7pm</p>
+            </div>
+          </Col>
+
+          <Col lg="3" md="4" sm="12">
+            <div className="mb-4">
+              <h5 className="footer__link-title">Newsletter</h5>
+              <p className="section__description">Subscribe our newsletter</p>
+              <div className="newsletter">
+                <input type="email" placeholder="Email" />
+                <span>
+                  <i class="ri-send-plane-line"></i>
+                </span>
+              </div>
+            </div>
+          </Col>
+
+          <Col lg="12">
+            <div className="footer__bottom">
+              <p className="section__description d-flex align-items-center justify-content-center gap-1 pt-4">
+                <i class="ri-copyright-line"></i>Copyright {year},Smart Parts Online Pvt. Ltd. (v6.2.8 build 240202.1348)
+              </p>
+            </div>
+          </Col>
+        </Row>
+      </Container>
+    </footer>
   );
 };
 

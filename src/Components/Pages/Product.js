@@ -1,41 +1,42 @@
 import React from 'react';
 import './CSS/Product.css'
-
-// Sample product data
-const products = [
-    {
-        id: 1,
-        name: 'Product 1',
-        description: 'Description of Product 1',
-        price: '$20.99',
-        imageSrc: 'path/to/product1.jpg',
-    },
-    {
-        id: 2,
-        name: 'Product 2',
-        description: 'Description of Product 2',
-        price: '$25.49',
-        imageSrc: 'path/to/product2.jpg',
-    },
-    // Add more product objects as needed
-];
+import { Container, Row, Col } from "reactstrap";
+import BlogList from '../Blog/BlogList';
+import carData from "../Assets/data/carData";
+import CarItem from "../CartItem/Cartitem.jsx";
 
 class ProductList extends React.Component {
     render() {
         return (
             <div>
-                <h2>Product List</h2>
-                <div className="product-container">
-                    {products.map((product) => (
-                        <div key={product.id} className="product-card">
-                            <img src={product.imageSrc} alt={product.name} />
-                            <h3>{product.name}</h3>
-                            <p>{product.description}</p>
-                            <p>{product.price}</p>
-                        </div>
-                    ))}
-                </div>
+                <section>
+                    <Container>
+                        <Row>
+                            <Col lg="12" className="text-center mb-5">
+                                <h6 className="section__subtitle">Come with</h6>
+                                <h2 className="section__title">Hot Offers</h2>
+                            </Col>
+
+                            {carData.slice(0, 6).map((item) => (
+                                <CarItem item={item} key={item.id} />
+                            ))}
+                        </Row>
+                    </Container>
+                </section>
+                <section>
+                    <Container>
+                        <Row>
+                            <Col lg="12" className="mb-5 text-center">
+                                <h2 className="section__title">Latest Blogs</h2>
+                            </Col>
+
+                            <BlogList />
+                        </Row>
+                    </Container>
+                </section>
+                
             </div>
+            
         );
     }
 }

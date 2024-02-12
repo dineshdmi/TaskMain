@@ -3,12 +3,12 @@
 import React, { useState, useEffect } from 'react';
 import './app.css';
 import Footer from './Components/Footer/Footer';
+import Booking from './Components/Pages/Booking';
 import Navbar from './Components/Navbar/navbar';
 import Dial from './Components/Pages/Contact';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginSignup from './Components/Pages/Login';
 import About from './Components/Pages/About';
-import TicketBookingPage from './Components/Pages/Booking';
 import TravelInformationPage from './Components/TravelInformation/TravelInformationPage';
 import Home from './Components/Pages/Home';
 import Product from './Components/Pages/Product';
@@ -33,15 +33,14 @@ const App = () => {
     <div>
       <BrowserRouter>
         <Navbar />
+        {/* <Booking /> */}
         <Routes>
           <Route path="/Home" element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/contact" element={<Dial />} />
-          <Route path="/booking" element={<TicketBookingPage />} />
           <Route path="/product" element={<Product />} />
-
           <Route
-            path="/travel-information"
+            path="/Home"
             element={<TravelInformationPage data={travelInfoData} />}
           />
           <Route path="/login" element={<LoginSignup />} />
