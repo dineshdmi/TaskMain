@@ -40,3 +40,9 @@
     justify-content: center;
     text-align: center;
 }
+.blog__item img:hover,
+.car__item img:hover {
+    transform: scale(1.1);
+    /* You can adjust the scale value as needed */
+    transition: transform 0.3s ease;
+}

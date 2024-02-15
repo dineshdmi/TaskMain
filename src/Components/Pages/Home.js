@@ -20,19 +20,19 @@ import { useEffect, useState } from 'react';
 
 
 const Home = ({ aboutClass }) => {
-  const [animationClass, setAnimationClass] = useState('');
+  // const [animationClass, setAnimationClass] = useState('');
 
-  useEffect(() => {
-    // Trigger animation when component mounts
-    setAnimationClass('animate');
+  // useEffect(() => {
+  //   // Trigger animation when component mounts
+  //   setAnimationClass('animate');
 
-    // Cleanup animation class after the animation duration
-    const timeoutId = setTimeout(() => {
-      setAnimationClass('');
-    }, 1000); // Set the duration according to your CSS animation duration
+  //   // Cleanup animation class after the animation duration
+  //   const timeoutId = setTimeout(() => {
+  //     setAnimationClass('');
+  //   }, 1000); // Set the duration according to your CSS animation duration
 
-    return () => clearTimeout(timeoutId); // Cleanup on component unmount
-  }, []);
+  //   return () => clearTimeout(timeoutId); // Cleanup on component unmount
+  // }, []);
 
 
   return (
@@ -41,7 +41,7 @@ const Home = ({ aboutClass }) => {
         className="about__section"
         style={
           aboutClass === "aboutPage"
-            ? { marginTop: "0px" }
+            ? { marginTop: "10px" }
             : { marginTop: "180px" }
         }
       >
@@ -49,8 +49,8 @@ const Home = ({ aboutClass }) => {
           <Row>
             <Col lg="6" md="6">
               <div className="about__section-content">
-                <h4 className={`section__subtitle ${animationClass}`} style={{ color: 'blue', fontSize: '40px' }}>
-                  Welcome
+                <h4 >
+                  Welcome To The Boodmo
                 </h4>
                 <p className="section__description">
                   Our project was established in 2015. Over this time we have been working on our goal – to help customers and suppliers in auto car spare parts sales and communication. This advertising platform was created to make online shopping easier for both automobile owners and parts dealers. Customers get an opportunity to buy car parts online, which are branded and original. Our continuously updated catalogs are filled with replacement parts, with well-known, and highly regarded brands. This provides auto parts suppliers with the ability to offer their products, communicate with clients, and increase sales along with their market share.
@@ -59,28 +59,25 @@ const Home = ({ aboutClass }) => {
                 <div>
                   <div className="about__section-item d-flex align-items-center">
                     <p className="section__description d-flex align-items-center gap-2">
-                      <i class="ri-checkbox-circle-line"></i> Lorem ipsum dolor sit
-                      amet.
+                      <i className="ri-check-line"></i> Cost Effective
                     </p>
 
                     <p className="section__description d-flex align-items-center gap-2">
-                      <i class="ri-checkbox-circle-line"></i> Lorem ipsum dolor sit
-                      amet.
+                      <i className="ri-check-line"></i> 100% Trust
                     </p>
                   </div>
 
                   <div className="about__section-item d-flex align-items-center">
                     <p className="section__description d-flex align-items-center gap-2">
-                      <i class="ri-checkbox-circle-line"></i> Lorem ipsum dolor sit
-                      amet.
+                      <i className="ri-check-line"></i> Free Delivery
                     </p>
 
                     <p className="section__description d-flex align-items-center gap-2">
-                      <i class="ri-checkbox-circle-line" style={{}}></i> Lorem ipsum dolor sit
-                      amet.
+                      <i className="ri-check-line"></i> 100% Original Product
                     </p>
                   </div>
                 </div>
+
               </div>
             </Col>
 
@@ -92,7 +89,7 @@ const Home = ({ aboutClass }) => {
           </Row>
         </Container>
       </section>
-      
+
       <div className="your-component">
         <div className="features">
           <div className="feature">

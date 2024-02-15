@@ -1,38 +1,36 @@
-import React from "react";
+import React from 'react';
+import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
+import { Link } from 'react-router-dom';
+import {
+  RiCarLine,
+  RiSendPlaneLine,
+  RiCopyrightLine
+} from 'react-icons/ri';
 
-import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
-import { Link } from "react-router-dom";
-import "./Footer.css";
+import './Footer.css';
 
 const quickLinks = [
-  {
-    path: "/home",
-    display: "Home",
-  },
+  { path: '/home', display: 'Home' },
+  { path: '/about', display: 'About' },
+  { path: '/login', display: 'Login' },
+  { path: '/contact', display: 'Contact' },
+  { path: '/product', display: 'Product' },
+];
 
-  {
-    path: "/about",
-    display: "About",
-  },
-
-  {
-    path: "/contact",
-    display: "Contact",
-  },
-  {
-    path: "/product",
-    display: "Product",
-  },
-
-  {
-    path: "/login",
-    display: "Login",
-  },
+const policyLinks = [
+  { path: '/privacy-policy', display: 'Privacy Policy' },
+  { path: '/return-policy', display: 'Return Policy' },
+  { path: '/disclaimer', display: 'Disclaimer' },
+  { path: '/terms-of-use', display: 'Terms of Use' },
+  { path: '/buyers-policy', display: 'Buyers Policy' },
+  { path: '/sellers-policy', display: 'Sellers Policy' },
+  { path: '/anti-corruption-policy', display: 'Anti-corruption Policy' },
 ];
 
 const Footer = () => {
   const date = new Date();
   const year = date.getFullYear();
+
   return (
     <footer className="footer">
       <Container>
@@ -40,17 +38,14 @@ const Footer = () => {
           <Col lg="4" md="4" sm="12">
             <div className="logo footer__logo">
               <h1>
-                <Link to="/home" className=" d-flex align-items-center gap-2">
-                  <i class="ri-car-line"></i>
-                  <span>
-                    BoodMo <br /> Service
-                  </span>
+                <Link to="/home" className="d-flex align-items-center gap-2">
+                  <RiCarLine />
+                  <span>BoodMo Service</span>
                 </Link>
               </h1>
             </div>
             <p className="footer__logo-content">
-              India's biggest online marketplace <br/> for car spare parts
-
+              India's biggest online marketplace <br /> for car spare parts
             </p>
           </Col>
 
@@ -67,16 +62,28 @@ const Footer = () => {
             </div>
           </Col>
 
+          <Col lg="2" md="4" sm="6">
+            <div className="mb-4">
+              <h5 className="footer__link-title">Policy Links</h5>
+              <ListGroup>
+                {policyLinks.map((item, index) => (
+                  <ListGroupItem key={index} className="p-0 mt-3 quick__link">
+                    <Link to={item.path}>{item.display}</Link>
+                  </ListGroupItem>
+                ))}
+              </ListGroup>
+            </div>
+          </Col>
+
           <Col lg="3" md="4" sm="6">
             <div className="mb-4">
               <h5 className="footer__link-title mb-4">Head Office</h5>
-              <p className="office__info">Smart Parts Online Pvt. Ltd.
+              <p className="office__info">
+                Smart Parts Online Pvt. Ltd.
                 AIHP Palms (Plot No. 242 & 243), Ground floor, Udyog Vihar Phase IV, Gurugram, Haryana-122015, India.
-                </p>
+              </p>
               <p className="office__info">Phone: +91 114 1189222</p>
-
               <p className="office__info">Email: your.email@example.com</p>
-
               <p className="office__info">Office Time: 10am - 7pm</p>
             </div>
           </Col>
@@ -84,11 +91,11 @@ const Footer = () => {
           <Col lg="3" md="4" sm="12">
             <div className="mb-4">
               <h5 className="footer__link-title">Newsletter</h5>
-              <p className="section__description">Subscribe our newsletter</p>
+              <p className="section__description" style={{ color: 'white' }}>Subscribe our newsletter</p>
               <div className="newsletter">
                 <input type="email" placeholder="Email" />
                 <span>
-                  <i class="ri-send-plane-line"></i>
+                  <RiSendPlaneLine />
                 </span>
               </div>
             </div>
@@ -97,11 +104,15 @@ const Footer = () => {
           <Col lg="12">
             <div className="footer__bottom">
               <p className="section__description d-flex align-items-center justify-content-center gap-1 pt-4">
-                <i class="ri-copyright-line"></i>Copyright {year},Smart Parts Online Pvt. Ltd. (v6.2.8 build 240202.1348)
+                <RiCopyrightLine /> Copyright {year}, Smart Parts Online Pvt. Ltd. (v6.2.8 build 240202.1348)
               </p>
             </div>
           </Col>
         </Row>
+
+        {/* Route for Policy Pages */}
+        {/* You should define routes in your main component or App.js */}
+
       </Container>
     </footer>
   );
