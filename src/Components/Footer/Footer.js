@@ -1,10 +1,13 @@
 import React from 'react';
+import  { useState, useEffect } from 'react';
+
 import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import {
   RiCarLine,
   RiSendPlaneLine,
-  RiCopyrightLine
+  RiCopyrightLine,
+  RiArrowUpSLine
 } from 'react-icons/ri';
 
 import './Footer.css';
@@ -30,6 +33,27 @@ const policyLinks = [
 const Footer = () => {
   const date = new Date();
   const year = date.getFullYear();
+
+  const [showScroll, setShowScroll] = useState(false);
+
+  const checkScrollTop = () => {
+    if (!showScroll && window.pageYOffset > 400) {
+      setShowScroll(true);
+    } else if (showScroll && window.pageYOffset <= 400) {
+      setShowScroll(false);
+    }
+  };
+
+  const scrollTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', checkScrollTop);
+    return () => {
+      window.removeEventListener('scroll', checkScrollTop);
+    };
+  }, [showScroll]);
 
   return (
     <footer className="footer">
@@ -109,6 +133,11 @@ const Footer = () => {
             </div>
           </Col>
         </Row>
+        {showScroll && (
+          <div className="scroll-to-top" onClick={scrollTop}>
+            <RiArrowUpSLine />
+          </div>
+        )}
 
         {/* Route for Policy Pages */}
         {/* You should define routes in your main component or App.js */}

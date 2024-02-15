@@ -16,20 +16,20 @@
 }
 .policy-content {
     color: #555;
-    
 }
 
 .policy-divider {
-    border: 1px solid #0f0d0d;
     margin: 20px 0;
+    margin-top: 0%;
+    border: none;
+    /* Add this line to remove the underline */
 }
 
 /* Additional styles for h2 in PolicySection */
-.policy-section h2 {
-    color: rgb(93, 21, 238);
+.return-policy-section h2 {
+color: rgb(128, 113, 213);
     margin-bottom: 10px;
-    font-weight: bold;
-    /* Updated to make it bold */
+    font-weight: 600;
     font-family: 'Times New Roman', Times, serif;
     font-size: 25px;
 }

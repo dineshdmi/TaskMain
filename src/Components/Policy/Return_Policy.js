@@ -5,12 +5,12 @@ import '../Policy/CSS/ReturnPolicy.css';
 
 const PolicySection = ({ title, content }) => {
   return (
-    <div className="policy-section">
+    <div className="return-policy-section">
       <h2>{title}</h2>
-      <div className="policy-content">
+      <div className="return-policy-content">
         {content}
       </div>
-      <hr className="policy-divider" />
+      <hr className="return-policy-divider" />
     </div>
   );
 };
@@ -18,8 +18,8 @@ const PolicySection = ({ title, content }) => {
 const ReturnPolicy = () => {
   return (
     <div className="return-policy-container">
-      <h1 className="section-title">RETURN, CANCELLATION AND REFUND POLICY</h1>
-      <div className="policy-content">
+      <h1 className="return-policy-title">RETURN, CANCELLATION AND REFUND POLICY</h1>
+      <div className="return-policy-content">
         {/* A. Introduction */}
         <PolicySection
           title="A. Introduction"
