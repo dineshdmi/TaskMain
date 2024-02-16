@@ -147,6 +147,7 @@ header {
     justify-content: center;
     align-items: center;
     flex-wrap: flex;
+    /* Fix for smaller screens */
     margin-bottom: 20px;
 }
 
@@ -154,13 +155,12 @@ header {
     text-align: center;
     margin: 10px;
     border-radius: 8px;
-    width: 10%;
-    height: 100px;
+    width: 100%;
+    /* Full width for smaller screens */
     padding: 10px;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-    /* Smooth transition for hover effect */
 }
 
 .logo-card img {
@@ -172,9 +172,7 @@ header {
 /* Logo Card Hover Effect */
 .logo-card:hover {
     transform: scale(1.05);
-    /* Scale up on hover */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    /* Add a subtle box shadow on hover */
 }
 
 /* About Section */
@@ -190,7 +188,6 @@ header {
 .about__section-content .section__description {
     color: #080808;
 }
-
 /* Subtitle Animation */
 .section__subtitle {
     opacity: 0;

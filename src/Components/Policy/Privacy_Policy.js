@@ -3,6 +3,7 @@
 import React from 'react';
 import './CSS/Privacy_Policy.css';
 import { FaHandPointRight } from "react-icons/fa";
+import company from '../Assets/logo.png'
 
 const PolicySection = ({ title, content }) => {
   return (
@@ -18,7 +19,11 @@ const PolicySection = ({ title, content }) => {
 
 const PrivacyPolicy = () => {
   return (
+    <>
+          <img src={company} alt="Top Image" style={{ width: '10%', height: 'auto' }} />
+
     <div className="privacy-policy-container">
+
       <h1 className="privacy-policy-title">Privacy Policy - boodmo</h1>
       <div className="privacy-policy-content">
         <PolicySection
@@ -105,6 +110,7 @@ const PrivacyPolicy = () => {
         Copyright 2022 © All rights reserved. Last Modified - 03 March 2022
       </p>
     </div>
+    </>
   );
 };
 

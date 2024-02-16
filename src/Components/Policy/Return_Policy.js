@@ -2,6 +2,7 @@
 
 import React from 'react';
 import '../Policy/CSS/ReturnPolicy.css';
+import company from '../Assets/logo.png'
 
 const PolicySection = ({ title, content }) => {
   return (
@@ -17,6 +18,8 @@ const PolicySection = ({ title, content }) => {
 
 const ReturnPolicy = () => {
   return (
+    <>
+      <img src={company} alt="Top Image" style={{ width: '10%', height: 'auto' }} />
     <div className="return-policy-container">
       <h1 className="return-policy-title">RETURN, CANCELLATION AND REFUND POLICY</h1>
       <div className="return-policy-content">
@@ -73,6 +76,7 @@ const ReturnPolicy = () => {
 
       </div>
     </div>
+    </>
   );
 };
 
