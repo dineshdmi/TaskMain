@@ -1,15 +1,9 @@
-import React from 'react';
-import  { useState, useEffect } from 'react';
+// Footer.js
 
+import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, ListGroup, ListGroupItem } from 'reactstrap';
 import { Link } from 'react-router-dom';
-import {
-  RiCarLine,
-  RiSendPlaneLine,
-  RiCopyrightLine,
-  RiArrowUpSLine
-} from 'react-icons/ri';
-
+import { RiCarLine, RiSendPlaneLine, RiCopyrightLine, RiArrowUpSLine } from 'react-icons/ri';
 import './Footer.css';
 
 const quickLinks = [
@@ -33,7 +27,6 @@ const policyLinks = [
 const Footer = () => {
   const date = new Date();
   const year = date.getFullYear();
-
   const [showScroll, setShowScroll] = useState(false);
 
   const checkScrollTop = () => {
@@ -60,7 +53,7 @@ const Footer = () => {
       <Container>
         <Row>
           <Col lg="4" md="4" sm="12">
-            <div className="logo footer__logo">
+            <div className="logo footer__logo" style={{ marginTop: '10%' }}>
               <h1>
                 <Link to="/home" className="d-flex align-items-center gap-2">
                   <RiCarLine />
@@ -72,7 +65,7 @@ const Footer = () => {
               India's biggest online marketplace <br /> for car spare parts
             </p>
           </Col>
-
+    
           <Col lg="2" md="4" sm="6">
             <div className="mb-4">
               <h5 className="footer__link-title">Quick Links</h5>
@@ -101,7 +94,7 @@ const Footer = () => {
 
           <Col lg="3" md="4" sm="6">
             <div className="mb-4">
-              <h5 className="footer__link-title mb-4">Head Office</h5>
+              <h5 className="footer__link-title">Head Office</h5>
               <p className="office__info">
                 Smart Parts Online Pvt. Ltd.
                 AIHP Palms (Plot No. 242 & 243), Ground floor, Udyog Vihar Phase IV, Gurugram, Haryana-122015, India.
@@ -127,7 +120,7 @@ const Footer = () => {
 
           <Col lg="12">
             <div className="footer__bottom">
-              <p className="section__description d-flex align-items-center justify-content-center gap-1 pt-4">
+              <p className="section__description d-flex align-items-center justify-content-center gap-1 pt-2">
                 <RiCopyrightLine /> Copyright {year}, Smart Parts Online Pvt. Ltd. (v6.2.8 build 240202.1348)
               </p>
             </div>
@@ -138,10 +131,6 @@ const Footer = () => {
             <RiArrowUpSLine />
           </div>
         )}
-
-        {/* Route for Policy Pages */}
-        {/* You should define routes in your main component or App.js */}
-
       </Container>
     </footer>
   );

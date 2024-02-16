@@ -1,33 +1,12 @@
-/* Navbar.css */
-
+/* Navbar Container */
 .navbar {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 15px 20px;
     transition: background-color 0.3s;
 }
-/* Navbar.css */
-/* Navbar.css */
 
-.navbar-nav .nav-link,
-.navbar-nav .nav-link:visited {
-    color: #333;
-    /* Default link color */
-    text-decoration: none;
-    /* Remove default underline */
-    transition: color 0.3s ease, box-shadow 0.3s ease;
-    /* Transition for smooth color and box-shadow change */
-}
-
-.navbar-nav .nav-link:hover,
-.navbar-nav .nav-link:active,
-.navbar-nav .nav-link:focus {
-    color: #007bff;
-    /* Change link color on hover and maintain the effect after clicking */
-    box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
-    border-bottom: 2px solid #007bff;
-    /* Add box-shadow on hover and maintain after clicking */
-}
+/* Navbar Content */
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -36,12 +15,31 @@
     margin: 0 auto;
 }
 
+.navbar-nav {
+    margin-left: auto;
+    font-size: 120%;
+    
+}
+
+/* Logo Section */
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
 .nav-logo img {
     width: 70px;
     height: 50px;
     cursor: pointer;
-    margin-right: 30px;
-    /* Add margin-right to create space between logo and menu */
+    margin-right: 10px;
+}
+
+/* Navigation Menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
 }
 
 .nav-menu ul {
@@ -49,74 +47,62 @@
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .nav-menu li {
     margin-right: 20px;
 }
 
-.nav-menu a {
+.navbar-nav a {
     text-decoration: none;
     color: #333;
     font-weight: 500;
-    font-size: 22px;
-    /* Add this line to set the font size */
-    transition: color 0.3s;
+    font-size: 18px;
+    transition: color 0.3s, border-bottom 0.3s;
+    /* Add transition for smooth effect */
 }
 
-.nav-menu a:hover {
+/* Add an underline to the active link */
+.navbar-nav a.active {
+    border-bottom: 2px solid #00ff55;
+}
+
+.navbar-nav a:hover {
     color: #007bff;
+    box-sizing: content-box;
+    border-bottom: 2px solid #007bff;
 }
 
-.nav-login-cart {
-    display: flex;
-    align-items: center;
+/* Profile Section */
+.profile-section {
+    margin-left: auto;
 }
 
 .profile-section img {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     cursor: pointer;
 }
 
+/* Login Form */
+.login-form {
+    margin-left: 20px;
+}
+
 .login-form button {
-    color: #000;
-    background-color: rgb(247, 251, 251);
-    margin-top: 10px;
-    /* Add margin-top */
+    color: #faf6f6;
+    background-color: rgb(14, 27, 202);
+    margin-top: 30px;
 }
 
 .login-form button:hover {
-    color: #de1414;
+    color: #2f14de;
 }
 
-.hamburger-menu {
-    display: none;
-    cursor: pointer;
-    
-}
-
-.bar {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 6px 0;
-    transition: 0.4s;
-}
-
-.show .bar:nth-child(1) {
-    transform: rotate(-45deg) translate(-5px, 6px);
-}
-
-.show .bar:nth-child(2) {
-    opacity: 0;
-}
-
-.show .bar:nth-child(3) {
-    transform: rotate(45deg) translate(-5px, -6px);
-}
-
+/* Responsive Styles */
 @media (max-width: 768px) {
     .nav-menu {
         display: none;
@@ -143,9 +129,5 @@
         margin: 0;
         text-align: center;
         padding: 10px;
-    }
-
-    .hamburger-menu {
-        display: block;
     }
 }

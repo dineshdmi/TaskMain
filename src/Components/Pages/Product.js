@@ -4,11 +4,15 @@ import { Container, Row, Col } from "reactstrap";
 import BlogList from '../Blog/BlogList';
 import carData from "../Assets/data/carData";
 import CarItem from "../CartItem/Cartitem.jsx";
+import company from '../Assets/logo.png'
+
 
 class ProductList extends React.Component {
     render() {
         return (
             <div>
+                <img src={company} alt="Top Image" style={{ width: '10%', height: 'auto' }} />
+
                 <section>
                     <Container>
                         <Row>

@@ -1,32 +1,5 @@
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-}
-.privacy-policy-container {
-    width: 1500px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #efeff1;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
+/* CSS/Contact.css */
 
-h1,
-h2 {
-    color: #3178dc;
-}
-
-ul {
-    list-style-type: disc;
-    margin-left: 20px;
-    color: #0e0e0e;
-}
-
-p {
-    line-height: 1.5;
-    color: #070707;
-}
 .card {
     width: 80%;
     margin: 0 auto;
@@ -36,7 +9,7 @@ p {
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: left;
-    margin-top: 8%;
+    margin-top: 2%;
 }
 
 .warning {
@@ -48,15 +21,6 @@ p {
     border-radius: 4px;
 }
 
-
-.card h2,
-.card h3 {
-    color: #333;
-}
-
-.card strong {
-    color: red;
-}
 .container {
     display: flex;
     justify-content: space-around;
@@ -66,28 +30,31 @@ p {
 
 .contact-info {
     flex: 1;
-        margin-top: 10%;
+    margin-top: 10%;
+    margin-left: 10%;
 }
 
 .contact-form {
     flex: 1;
     background-color: rgba(79, 161, 208, 0.5);
-    /* Red color with 50% opacity */
     padding: 20px;
     border-radius: 8px;
     text-align: center;
+    width: 80;
 }
 
 .contact-form h2 {
     margin-bottom: 20px;
     color: #333;
-    margin-left: -1%;
+    justify-content: center;
+    text-align: center;
 }
 
 .contact-form label {
     display: block;
     margin-bottom: 8px;
     color: #333;
+    
 }
 
 .contact-form input,

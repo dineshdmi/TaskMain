@@ -41,9 +41,10 @@ const Navbar = () => {
                             <img src={logo} alt="Company Logo" className="company-logo" onClick={handleLogoClick} />
                         </h5>
                         <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" onClick={toggleMenu}></button>
+                        
                     </div>
                     <div className="offcanvas-body">
-                        <ul className="navbar-nav">
+                        <ul className="navbar-nav" >
                             <li className="nav-item">
                                 <Link to="/Home" className="nav-link">Home</Link>
                             </li>
@@ -57,9 +58,9 @@ const Navbar = () => {
                                 <Link to="/product" className="nav-link">Product</Link>
                             </li>
                             <li className="nav-item dropdown">
-                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <div className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Policies
-                                </a>
+                                </div>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><Link to="/privacy-policy" className="dropdown-item" onClick={handleLogoClick}>Privacy Policy</Link></li>
                                     <li><Link to="/return-policy" className="dropdown-item" onClick={handleLogoClick}>Return Policy</Link></li>

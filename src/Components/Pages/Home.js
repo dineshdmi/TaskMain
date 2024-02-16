@@ -1,4 +1,5 @@
 import React from 'react';
+import company from '../Assets/logo.png'
 import bosch from '../Assets/bosch.jpg';
 import motherson from '../Assets/motherson.jpg';
 import igb from '../Assets/igb.jpg';
@@ -37,12 +38,13 @@ const Home = ({ aboutClass }) => {
 
   return (
     <div>
+      <img src={company} alt="Top Image" style={{ width: '10%', height: 'auto' }} />
       <section
         className="about__section"
         style={
           aboutClass === "aboutPage"
             ? { marginTop: "10px" }
-            : { marginTop: "180px" }
+            : { marginTop: "80px" }
         }
       >
         <Container>

@@ -1,4 +1,5 @@
 import React from 'react';
+import company from '../Assets/logo.png'
 
 import info1 from '../Assets/info1.jpg';
 import info2 from '../Assets/info2.jpg';
@@ -13,6 +14,8 @@ class About extends React.Component {
   render() {
     return (
       <div>
+        <img src={company} alt="Top Image" style={{ width: '10%', height: 'auto' }} />
+
         <div className="about-us-container">
           <h1>About Us</h1>
           <p>
