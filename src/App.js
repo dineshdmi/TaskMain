@@ -1,8 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
 import './app.css';
 import Footer from './Components/Footer/Footer';
-// import Booking from './Components/Pages/Booking';
 import Navbar from './Components/Navbar/navbar';
 import Dial from './Components/Pages/Contact';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -25,7 +23,13 @@ const App = () => {
   useEffect(() => {
     const storedData = localStorage.getItem('travelInfoData');
     if (storedData) {
-      setTravelInfoData(storedData);
+      setTravelInfoData(prevData => {
+        // Using the functional form ensures the latest state is used
+        if (prevData !== storedData) {
+          return storedData;
+        }
+        return prevData;
+      });
     }
   }, []);
 
