@@ -1,0 +1,31 @@
+/* Navbar.css */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+}
+
+.left-end {
+    display: flex;
+    align-items: center;
+}
+
+.app-name {
+    margin-right: 20px;
+    font-size: 1.5rem; /* Adjust the font size as needed */
+}
+
+.right-end {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.right-end a {
+    text-decoration: none;
+    color: white;
+}

@@ -1,68 +1,81 @@
-import React, { useState, useEffect } from 'react';
-import './app.css';
-import Footer from './Components/Footer/Footer';
-import Navbar from './Components/Navbar/navbar';
-import Dial from './Components/Pages/Contact';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import LoginSignup from './Components/Pages/Login';
-import About from './Components/Pages/About';
-import TravelInformationPage from './Components/TravelInformation/TravelInformationPage';
-import Home from './Components/Pages/Home';
-import Product from './Components/Pages/Product';
-import ReturnPolicy from './Components/Policy/Return_Policy';
-import PrivacyPolicy from './Components/Policy/Privacy_Policy';
-import TermsOfUse from './Components/Policy/Terms_of_Use';
-import Disclaimer from './Components/Policy/Disclaimer';
-import BuyersPolicy from './Components/Policy/Buyers_Policy';
-import SellersPolicy from './Components/Policy/Sellers_Policy';
-import AntiCorruptionPolicy from './Components/Policy/Anti_corruption_Policy';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import ToastNotification from "./Components/ToastNotification";
+import Component1 from "./Components/Component1";
+import Component2 from "./Components/Component2";
+import Component3 from "./Components/Component3";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Navbar from "./Components/Navbar/Navbar";
+import Footer from "./Components/Footer/Footer";
 
-const App = () => {
-  const [travelInfoData, setTravelInfoData] = useState('');
+const MAX_VISIBLE_NOTIFICATIONS = 3;
 
-  useEffect(() => {
-    const storedData = localStorage.getItem('travelInfoData');
-    if (storedData) {
-      setTravelInfoData(prevData => {
-        // Using the functional form ensures the latest state is used
-        if (prevData !== storedData) {
-          return storedData;
-        }
-        return prevData;
-      });
+function App() {
+  const [toasts, setToasts] = useState([]);
+  const [notificationQueue, setNotificationQueue] = useState([]);
+
+  const addToast = (message, type = "success", duration = 7000) => {
+    const toast = { id: Math.random()+Date.now(), message, duration, type };
+    if (toasts.length < MAX_VISIBLE_NOTIFICATIONS) {
+      setToasts((prevToasts) => [...prevToasts, toast]);
+    } else {
+      // If not, add it to the queue
+      addNotificationToQueue(toast);
     }
-  }, []);
+  };
 
-  useEffect(() => {
-    localStorage.setItem('travelInfoData', travelInfoData);
-  }, [travelInfoData]);
+  const removeToast = (id) => {
+    let toastNotifications = [...toasts];
+    toastNotifications = toastNotifications.filter((notification) => notification.id !== id)
+    if (notificationQueue.length > 0) {
+      const [nextNotification, ...restQueue] = notificationQueue;
+      setNotificationQueue(restQueue);
+      toastNotifications.push(nextNotification);
+    }
+    setToasts(toastNotifications);
+  };
+
+  // Function to add a new notification to the queue
+  const addNotificationToQueue = (notification) => {
+    setNotificationQueue((prev) => [...prev, notification]);
+  };
 
   return (
-    <div>
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/Home" element={<Home />} />
-          <Route path="/About" element={<About />} />
-          <Route path="/contact" element={<Dial />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/return-policy" element={<ReturnPolicy />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/disclaimer" element={<Disclaimer />} />
-          <Route path="/terms-of-use" element={<TermsOfUse />} />
-          <Route path="/buyers-policy" element={<BuyersPolicy />} />
-          <Route path="/sellers-policy" element={<SellersPolicy />} />
-          <Route path="/anti-corruption-policy" element={<AntiCorruptionPolicy />} />
+    <div className="app-container">
+      <div className="main-content">
+        {toasts?.map((toast,index) => (
+          <ToastNotification key={toast.id} {...toast} removeNotification={removeToast} index={index+1}/>
+        ))}
+        <BrowserRouter>
+          <Navbar />
+          <Routes>
           <Route
-            path="/Home"
-            element={<TravelInformationPage data={travelInfoData} />}
-          />
-          <Route path="/login" element={<LoginSignup />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+              index
+              element={
+                <Component1 onShowToast={() => addToast("Default Message","info")} />
+              }
+            />
+            <Route
+              path="/component1"
+              element={
+                <Component1 onShowToast={() => addToast("Default Message","info")} />
+              }
+            />
+            <Route
+              path="/component2"
+              element={<Component2 onShowToast={addToast} />}
+            />
+            <Route
+              path="/component3"
+              element={<Component3 onShowToast={addToast} />}
+            />
+          </Routes>
+          
+        </BrowserRouter>
+      </div>
+       <Footer/>
     </div>
   );
-};
+}
 
 export default App;

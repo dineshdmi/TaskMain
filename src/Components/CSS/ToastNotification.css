@@ -1,0 +1,87 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform:translateX(-50%) translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform:translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform:translateX(-50%) translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform:translateX(-50%) translateY(100%);
+    }
+}
+
+.toast-notification {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #333;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-out forwards; /* Using the fadeIn animation for initial display */
+    transition: visibility 0s linear 0.5s, transform 0s linear 0.5s;
+    margin: 10px;
+    min-width: 250px;
+    z-index: 1055;
+}
+
+.toast-notification.visible {
+    animation: fadeIn 0.5s ease-out forwards;
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+.toast-notification.hidden {
+    animation: fadeOut 0.5s ease-in forwards;
+    visibility: hidden;
+    pointer-events: none; /* To prevent interaction with hidden toasts */
+}
+
+/* Type-specific styles */
+.toast-notification.info {
+    background-color: #c4def0;
+    color: #099dec;
+}
+
+.toast-notification.success {
+    background-color: #e1f8ea;
+    color: #1ec260;
+}
+
+.toast-notification.warning {
+    background-color: #f39c12;
+    color: #c0770a;
+}
+
+.toast-notification.error {
+    background-color: #ecc8c8;
+    color: #910a0a;
+}
+
+.toast-notification div {
+    flex: 1;
+}
+
+/* Close button styles */
+.toast-notification button {
+    cursor: pointer;
+    background: none;
+    border: none;
+    color: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+}

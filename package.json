@@ -1,33 +1,15 @@
 {
-  "name": "travel",
+  "name": "task",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@fortawesome/free-solid-svg-icons": "^5.15.3",
-    "@react-google-maps/api": "^2.19.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "antd": "^5.12.7",
-    "body-parser": "^1.20.2",
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "fontawesome": "^5.6.3",
-    "icons": "^1.0.0",
-    "nodemailer": "^6.9.8",
-    "nodemon": "^3.0.3",
     "react": "^18.2.0",
-    "react-bootstrap": "^2.10.1",
     "react-dom": "^18.2.0",
-    "react-fontawesome": "^1.7.1",
-    "react-icon": "^1.0.0",
-    "react-icons": "^4.12.0",
-    "react-router-dom": "^6.22.0",
-    "react-scripts": "^5.0.1",
-    "react-slick": "^0.29.0",
-    "react-social-icons": "^6.10.0",
-    "reactstrap": "^9.2.2",
-    "slick-carousel": "^1.8.1",
+    "react-router-dom": "^6.22.1",
+    "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -53,10 +35,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
-  "main": "index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  }
 }
